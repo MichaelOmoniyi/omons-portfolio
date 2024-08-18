@@ -1,0 +1,62 @@
+.hamburgerContainer {
+  display: inline-block;
+  width: 2rem;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.navBtn {
+  display: none;
+}
+
+.navBtnLabel {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.hamburger {
+  display: block;
+  width: 100%;
+  height: 6px;
+  background-color: black;
+  position: relative;
+}
+
+.hamburger::after,
+.hamburger::before {
+  content: "";
+  display: block;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 6px;
+  position: absolute;
+  transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hamburger::after {
+  bottom: 12px;
+}
+
+.hamburger::before {
+  top: 12px;
+}
+
+.navBtn:checked + .navBtnLabel .hamburger {
+  background-color: transparent;
+}
+
+.navBtn:checked + .navBtnLabel .hamburger::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navBtn:checked + .navBtnLabel .hamburger::before {
+  transform: rotate(-45deg);
+  top: 0;
+}

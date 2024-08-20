@@ -1,0 +1,75 @@
+.landingPageContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  background-image: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.landingPageContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  gap: 3rem;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 1s ease-out;
+}
+
+.bgPattern {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-image: url("../../../public/assets/flat-drawn-purple-striped-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.text {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+}
+
+@keyframes waving {
+  0% {
+    transform: rotate(60deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+.wavingEmoji {
+  display: inline-block;
+  animation: waving 2s ease-in-out 0.5s infinite normal backwards;
+  animation-fill-mode: forwards;
+  /* transform: rotate(-40deg); */
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 720px) {
+  .text {
+    font-size: 5vw;
+  }
+  .subText {
+    font-size: 2vw;
+  }
+}

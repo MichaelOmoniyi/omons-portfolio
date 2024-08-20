@@ -1,0 +1,66 @@
+.formContainer {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.formContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--header);
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.formContent div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formContent label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.formContent input,
+.formContent textarea {
+  width: 100%;
+  border: 1px solid var(--header);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: border 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.formContent input:focus,
+.formContent textarea:focus {
+  border: 2px solid var(--header);
+  outline: none;
+}
+
+.formContent button {
+  width: 100%;
+  border: 1px solid var(--text);
+  border-radius: 1rem;
+  padding: 1rem;
+  background-image: linear-gradient(315deg, var(--purple-grad) 0%, var(--blue-grad) 74%);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: none;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.formContent button:hover {
+  background-image: linear-gradient(315deg, var(--blue-grad) 0%, var(--purple-grad) 74%);
+  box-shadow: 2px 2px var(--header);
+}
+
+@media (min-width: 720px) {
+  .formContainer {
+    padding-inline: calc(5rem + 25vw);
+  }
+}

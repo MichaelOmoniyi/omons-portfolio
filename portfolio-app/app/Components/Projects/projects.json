@@ -1,0 +1,51 @@
+[   
+    {"id": 1,
+    "title": "K-Edu",
+    "image": "/assets/k-edu.vercel.app_(Nest Hub).png",
+    "imageAlt": "K-edu website",
+    "description": "This is a e-learning site developed for the Klaytn blockchain ecosystem. The site aims to help users fully understand the ecosystem and how to go about using applications built on the ecosystem. It functionalities includes: wallet connection, course filter/searching, and responsiveness.",
+    "github": "",
+    "liveSite": "https://k-edu.vercel.app/"
+    },
+    {"id": 2,
+    "title": "Analytic Dashboard",
+    "image": "/assets/analytics-dashboard-liard.vercel.app_(Nest Hub).png",
+    "imageAlt": "Analytic Dashboard website",
+    "description": "This is a website that diplays analysis. It functionalities includes: different site theme(light and dark), sidebar, responsiveness, etc.",
+    "github": "",
+    "liveSite": "https://analytics-dashboard-liard.vercel.app/"
+    },
+    {"id": 3,
+    "title": "Udemy Clone",
+    "image": "/assets/udemy-landing-page-clone-six.vercel.app_(Nest Hub).png",
+    "imageAlt": "K-edu website",
+    "description": "This was my final project at a bootcamp. It was a group project that required us to clone the landing page of the udemy website.",
+    "github": "",
+    "liveSite": "https://udemy-landing-page-clone-six.vercel.app/"
+    },
+    {"id": 4,
+    "title": "Playmo",
+    "image": "/assets/playmo-two.vercel.app_(Nest Hub).png",
+    "imageAlt": "K-edu website",
+    "description": "This happens to be my final group project in the Alx SE program. It functionalities includes: spotify integration, accessibity, and responsiveness",
+    "github": "",
+    "liveSite": "https://playmo-two.vercel.app/"
+    },
+    {"id": 5,
+    "title": "Intro Section with dropdown navigation",
+    "image": "/assets/intro-section-with-dropdown-navigation-main-one-jet.vercel.app_(Nest Hub).png",
+    "imageAlt": "K-edu website",
+    "description": "This is a frontend mentor project, it is a landing page with functionalites such as: dropdown navigation, navbar, accessibility, and responsiveness",
+    "github": "",
+    "liveSite": "https://intro-section-with-dropdown-navigation-main-one-jet.vercel.app/"
+    },
+    {"id": 6,
+    "title": "Social Proof Section",
+    "image": "/assets/social-proof-section-inky-two.vercel.app_(Nest Hub).png",
+    "imageAlt": "K-edu website",
+    "description": "This is also a frontend mentor project, it a landing page built to practice site resonsiveness and layout.",
+    "github": "",
+    "liveSite": "https://social-proof-section-inky-two.vercel.app/"
+    }
+]
+ 

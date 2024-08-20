@@ -1,0 +1,23 @@
+.gallery {
+    margin-top: 2rem;
+}
+
+.group {
+    border: 1px solid var(--border-color);
+}
+
+.projectDescription {
+    padding: .5rem 1rem;
+}
+
+.projectLinks {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: .5rem;
+}
+
+.icons {
+    color: var(--border-color);
+    font-size: 30px;
+}

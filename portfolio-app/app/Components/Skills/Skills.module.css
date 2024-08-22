@@ -58,4 +58,10 @@
     .icons {
         font-size: 10vw;
     }
+
+    .skillList ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
 }

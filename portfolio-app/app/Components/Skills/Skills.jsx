@@ -8,7 +8,7 @@ import {
   faHtml5,
   faPython,
 } from "@fortawesome/free-brands-svg-icons";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const Skills = () => {
   return (
@@ -26,7 +26,7 @@ const Skills = () => {
       <div className={styles.skillsContainer}>
         <div className={styles.skill}>
           <span className={styles.skillHeader}>
-            <h3>Languages</h3> <FontAwesomeIcon icon={faArrowDown} />
+            <h3>Languages</h3> <FontAwesomeIcon icon="fa-caret-down" />
           </span>
           <div className={styles.skillList}>
             <ul>
@@ -42,7 +42,7 @@ const Skills = () => {
         </div>
         <div className={styles.skill}>
           <span className={styles.skillHeader}>
-            <h3>Frameworks</h3> <FontAwesomeIcon icon={faArrowDown} />
+            <h3>Frameworks</h3> <FontAwesomeIcon icon="fa-caret-down" />
           </span>
           <div className={styles.skillList}>
             <ul>
@@ -56,7 +56,7 @@ const Skills = () => {
         </div>
         <div className={styles.skill}>
           <span className={styles.skillHeader}>
-            <h3>Tools</h3> <FontAwesomeIcon icon={faArrowDown} />
+            <h3>Tools</h3> <FontAwesomeIcon icon="fa-caret-down" />
           </span>
           <div className={styles.skillList}>
             <ul>
@@ -72,7 +72,7 @@ const Skills = () => {
         </div>
         <div className={styles.skill}>
           <span className={styles.skillHeader}>
-            <h3>Soft Skills</h3> <FontAwesomeIcon icon={faArrowDown} />
+            <h3>Soft Skills</h3> <FontAwesomeIcon icon="fa-caret-down" />
           </span>
           <div className={styles.skillList}>
             <ul>

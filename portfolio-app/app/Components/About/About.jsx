@@ -1,15 +1,62 @@
-import React from "react";
+"use client";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./About.module.css";
 
 const About = () => {
+  const profileImgRef = useRef(null);
+  const aboutTextRef = useRef(null);
+  const [isProfileImgVisible, setIsProfileImgVisible] = useState(false);
+  const [isAboutTextVisible, setIsAboutTextVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === profileImgRef.current) {
+              setIsProfileImgVisible(true);
+              observer.unobserve(profileImgRef.current);
+            } else if (entry.target === aboutTextRef.current) {
+              setIsAboutTextVisible(true);
+              observer.unobserve(aboutTextRef.current);
+            }
+          }
+        })
+      },
+      { threshold: 0.1 }
+    );
+
+    if (profileImgRef.current) {
+      observer.observe(profileImgRef.current);
+    }
+    if (aboutTextRef.current) {
+      observer.observe(aboutTextRef.current)
+    }
+
+    return () => {
+      if (profileImgRef.current) {
+        observer.unobserve(profileImgRef.current);
+      }
+      if (aboutTextRef.current) {
+        observer.unobserve(aboutTextRef.current)
+      }
+    };
+  }, []);
+
   return (
     <div className="container" id="about">
       <h2 className="header">Who is Omons?</h2>
       <div className={styles.profileContainer}>
-        <div className={styles.profileImg}>
+        <div
+          ref={profileImgRef}
+          className={`${styles.profileImg} ${isProfileImgVisible ? styles.fadeIn : ""}`}
+        >
           <img src="./assets/profileImage.jpeg" alt="My profile" />
         </div>
-        <div className={styles.about}>
+        <div
+          ref={aboutTextRef}
+          className={`${styles.about} ${isAboutTextVisible ? styles.fadeIn : ""}`}
+        >
           <p>
             Hi there! I&apos;m Michael Omoniyi, thought most of my friends call
             me &quot;Omons&quot;. I am a 300-level Systems Engineering student

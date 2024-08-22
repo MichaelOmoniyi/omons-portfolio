@@ -13,6 +13,8 @@
   --header: rgb(97, 35, 158);
   --border-color: rgb(97, 35, 158);
   --text: rgb(70, 70, 70);
+  --nav-shadow: rgba(97, 35, 158, 0.2);
+  --bg-img: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
   --montserrat: "Montserrat", sans-serif;
 }
 

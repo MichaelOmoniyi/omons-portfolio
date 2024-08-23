@@ -75,10 +75,15 @@ const NavBar = () => {
     <div className={styles.NavBarContainer} id="navbarContainer">
       <div className={styles.NavBarMain} id="navbarMain">
         <a href="/">
-          <h1 className={`${styles.logoText} font-bold text-3xl`} id="logoText">Omons</h1>
+          <h1 className={`${styles.logoText} font-bold text-3xl`} id="logoText">
+            Omons
+          </h1>
         </a>
         <div className={styles.smxm}>
-          <div className={`${styles.navLinks} text-xl font-medium`} id="navLinks">
+          <div
+            className={`${styles.navLinks} text-xl font-medium`}
+            id="navLinks"
+          >
             <a className={`${styles.navLink} navLink`} href="#about">
               About
             </a>
@@ -97,6 +102,7 @@ const NavBar = () => {
             <a
               className={`${styles.navBtn} navBtn`}
               href="https://drive.google.com/file/d/1fGVoHtV5OPfh0kZ17vINp_XDYuiEr1lO/view?usp=drive_link"
+              target="_blank"
             >
               Download Resume
             </a>
@@ -105,7 +111,10 @@ const NavBar = () => {
         </div>
       </div>
       <div className={`${styles.dropdownContainer}`} id="dropdownContainer">
-        <div className={`${styles.dropdownLinks} text-xl font-medium`} id="dropdownLinks">
+        <div
+          className={`${styles.dropdownLinks} text-xl font-medium`}
+          id="dropdownLinks"
+        >
           <a href="#about" className="navLink">
             About
           </a>
@@ -124,6 +133,7 @@ const NavBar = () => {
           <a
             href="https://drive.google.com/file/d/1fGVoHtV5OPfh0kZ17vINp_XDYuiEr1lO/view?usp=drive_link"
             className="navLink"
+            target="_blank"
           >
             Download Resume
           </a>

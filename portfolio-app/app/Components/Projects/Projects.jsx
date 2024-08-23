@@ -70,13 +70,13 @@ const Projects = () => {
                     className="h-full w-full object-cover object-center"
                   />
                   <div className={`${styles.projectLinksHover}`}>
-                    <a href={project["github"]}>
+                    <a href={project["github"]} target="_blank">
                       <FontAwesomeIcon
                         icon={faGithub}
                         className={styles.icons}
                       />
                     </a>
-                    <a href={project["liveSite"]}>
+                    <a href={project["liveSite"]} target="_blank">
                       <FontAwesomeIcon
                         icon={faGlobe}
                         className={styles.icons}
@@ -94,13 +94,13 @@ const Projects = () => {
                     </p>
                   </div>
                   <div className={styles.projectLinks}>
-                    <a href={project["github"]}>
+                    <a href={project["github"]} target="_blank">
                       <FontAwesomeIcon
                         icon={faGithub}
                         className={styles.icons}
                       />
                     </a>
-                    <a href={project["liveSite"]}>
+                    <a href={project["liveSite"]} target="_blank">
                       <FontAwesomeIcon
                         icon={faGlobe}
                         className={styles.icons}

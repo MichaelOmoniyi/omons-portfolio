@@ -24,7 +24,9 @@ const SayHi = () => {
 
   return (
     <div className="container">
-      <h1 className={`header`}>Say Hi</h1>
+      <h1 className={`header`} id="sayhi">
+        Say Hi
+      </h1>
       <div className={styles.formContainer}>
         <form id="contactForm" onSubmit={sendEmail}>
           <div className={styles.formContent}>

@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import styles from "./Hamburger.module.css";
 
-const Humburger = ({ onHamburgerClicking }) => {
+const Humburger = ({ onHamburgerClicking, isOpen }) => {
   useEffect(() => {
     const hamburger = document.getElementById("hamburger");
     const screenHeight =
@@ -22,13 +22,14 @@ const Humburger = ({ onHamburgerClicking }) => {
 
       lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
     });
-  });
+  }, []);
 
   const handleClick = (event) => {
     if (onHamburgerClicking) {
       onHamburgerClicking("nav-btn");
     }
   };
+
   return (
     <div className={styles.hamburgerContainer}>
       <input
@@ -36,6 +37,8 @@ const Humburger = ({ onHamburgerClicking }) => {
         name="nav-btn"
         id="nav-btn"
         className={styles.navBtn}
+        checked={isOpen}
+        onChange={() => {}}
       />
       <label htmlFor="nav-btn" className={styles.navBtnLabel}>
         <span

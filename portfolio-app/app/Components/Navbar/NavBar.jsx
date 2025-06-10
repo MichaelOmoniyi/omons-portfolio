@@ -1,35 +1,57 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Humburger from "../Hamburger/Hamburger";
 import styles from "./NavBar.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     const navBar = document.getElementById("navbarContainer");
     const navBarMain = document.getElementById("navbarMain");
     const logoText = document.getElementById("logoText");
-    const navLinks = document.querySelectorAll(".navLink")
+    const navLinks = document.querySelectorAll(".navLink");
     const dropdownLinks = document.getElementById("dropdownLinks");
-    const screenHeight =
-      window.innerHeight ||
-      document.body.clientHeight ||
-      document.documentElement.clientHeight;
+    const scrollThreshold = 100;
+
     let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    // Smooth scroll function
+    const smoothScroll = (e, id) => {
+      e.preventDefault();
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    // Add smooth scroll to all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        const id = anchor.getAttribute("href").slice(1);
+        if (id) smoothScroll(e, id);
+      });
+    });
 
     window.addEventListener("scroll", () => {
       let scrollTopPosition =
         window.scrollY || document.documentElement.scrollTop;
-      if (window.scrollY > screenHeight) {
+      if (window.scrollY > scrollThreshold) {
         navBarMain.classList.add(`${styles.beyondLandingPage}`);
         logoText.classList.add(`${styles.logoTextScroll}`);
         dropdownLinks.classList.add(`${styles.dropdownLinksScroll}`);
         navLinks.forEach((link) => {
           link.classList.add(`${styles.navLinkScoll}`);
-        })
+        });
 
         if (scrollTopPosition >= lastScrollTop) {
           setTimeout(() => {
-            navBar.style.transform = "translateY(-400px)";
+            navBar.style.transform = "translateY(-100%)";
           }, 1);
         } else {
           setTimeout(() => {
@@ -47,28 +69,38 @@ const NavBar = () => {
 
       lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
     });
-
-    
-  });
+  }, []);
 
   const handleHamburgerClicking = (hamburgerId) => {
-    const hamburgerInput = document.getElementById(hamburgerId);
+    setIsMenuOpen(!isMenuOpen);
     const dropdown = document.getElementById("dropdownContainer");
     const navLinks = document.querySelectorAll(".navLink");
-    if (!hamburgerInput.checked) {
+    const body = document.body;
+
+    if (!isMenuOpen) {
       dropdown.classList.add(`${styles.dropdownContainerVisible}`);
+      body.style.overflow = "hidden";
     } else {
       dropdown.classList.remove(`${styles.dropdownContainerVisible}`);
+      body.style.overflow = "";
     }
 
     navLinks.forEach((navLink) => {
       navLink.addEventListener("click", () => {
         if (dropdown.classList.contains(`${styles.dropdownContainerVisible}`)) {
-          dropdown.classList.remove(`${styles.dropdownContainerVisible}`);
-          hamburgerInput.checked = false;
+          closeMenu();
         }
       });
     });
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    const dropdown = document.getElementById("dropdownContainer");
+    const body = document.body;
+
+    dropdown.classList.remove(`${styles.dropdownContainerVisible}`);
+    body.style.overflow = "";
   };
 
   return (
@@ -107,10 +139,16 @@ const NavBar = () => {
               Download Resume
             </a>
           </div>
-          <Humburger onHamburgerClicking={handleHamburgerClicking} />
+          <Humburger
+            onHamburgerClicking={handleHamburgerClicking}
+            isOpen={isMenuOpen}
+          />
         </div>
       </div>
       <div className={`${styles.dropdownContainer}`} id="dropdownContainer">
+        <button className={styles.closeButton} onClick={closeMenu}>
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
         <div
           className={`${styles.dropdownLinks} text-xl font-medium`}
           id="dropdownLinks"

@@ -1,59 +1,66 @@
 [   
-    {"id": 1,
-    "title": "K-Edu",
-    "image": "/assets/k-edu.vercel.app_(Nest Hub).png",
-    "imageAlt": "K-edu website",
-    "description": "This is a e-learning site developed for the Klaytn blockchain ecosystem. The site aims to help users fully understand the ecosystem and how to go about using applications built on the ecosystem. It functionalities includes: wallet connection, course filter/searching, and responsiveness.",
-    "github": "https://github.com/MichaelOmoniyi/klaytn-dapp-toolkit/tree/main/frontend/k-edu",
-    "liveSite": "https://k-edu.vercel.app/"
+    {
+        "id": 1,
+        "title": "Balinga Photography",
+        "image": "/assets/balinga.png",
+        "imageAlt": "Balinga Photography website",
+        "description": "A modern photography portfolio showcasing stunning visuals with smooth transitions, gallery features, and contact integration. Built with React and modern design principles.",
+        "github": "https://github.com/MichaelOmoniyi/Balinga-Photography",
+        "liveSite": "https://balinga-photography.vercel.app/"
     },
-    {"id": 2,
-    "title": "Analytic Dashboard",
-    "image": "/assets/analytics-dashboard-liard.vercel.app_(Nest Hub).png",
-    "imageAlt": "Analytic Dashboard website",
-    "description": "This is a website that diplays analysis. It functionalities includes: different site theme(light and dark), sidebar, responsiveness, etc.",
-    "github": "https://github.com/MichaelOmoniyi/Analytics-Dashboard",
-    "liveSite": "https://analytics-dashboard-liard.vercel.app/"
+    {
+        "id": 2,
+        "title": "Mountain Top Record",
+        "image": "/assets/mountain-top.jpeg",
+        "imageAlt": "Mountain Top Record Application",
+        "description": "A church management system for Mountain Top Youth Church featuring attendance tracking, member management, and event organization capabilities.",
+        "github": "https://github.com/MichaelOmoniyi/Mountain-Top-Youth-Church",
+        "liveSite": "https://mountain-top-youth-church.vercel.app/"
     },
-    {"id": 3,
-    "title": "Clarify",
-    "image": "/assets/clarify-app.pages.dev_(Nest Hub Max).png",
-    "imageAlt": "Clarify website",
-    "description": "In a quest to proffer a solution to challenges many beginners or even professionals face, my team and I at ALX thought to solve the problem of mentorship which many of us can relate to. We decided to create an application that helps people navigate their respective career paths and gain an understanding of their strengths, and weaknesses and what career paths suit them better.",
-    "github": "https://github.com/MichaelOmoniyi/social-proof-section-master",
-    "liveSite": "https://clarify-app.pages.dev/"
+    {
+        "id": 3,
+        "title": "K-Edu",
+        "image": "/assets/k-edu.vercel.app_(Nest Hub).png",
+        "imageAlt": "K-edu website",
+        "description": "An e-learning platform for the Klaytn blockchain ecosystem with wallet integration, course filtering, and comprehensive learning resources.",
+        "github": "https://github.com/MichaelOmoniyi/klaytn-dapp-toolkit/tree/main/frontend/k-edu",
+        "liveSite": "https://k-edu.vercel.app/"
     },
-    {"id": 4,
-    "title": "Udemy Clone",
-    "image": "/assets/udemy-landing-page-clone-six.vercel.app_(Nest Hub).png",
-    "imageAlt": "K-edu website",
-    "description": "This was my final project at a bootcamp. It was a group project that required us to clone the landing page of the udemy website.",
-    "github": "https://github.com/MichaelOmoniyi/Udemy-Landing-Page-Clone",
-    "liveSite": "https://udemy-landing-page-clone-six.vercel.app/"
+    {
+        "id": 4,
+        "title": "Analytic Dashboard",
+        "image": "/assets/analytics-dashboard-liard.vercel.app_(Nest Hub).png",
+        "imageAlt": "Analytic Dashboard website",
+        "description": "A responsive analytics dashboard with dark/light theme support and interactive data visualization features.",
+        "github": "https://github.com/MichaelOmoniyi/Analytics-Dashboard",
+        "liveSite": "https://analytics-dashboard-liard.vercel.app/"
     },
-    {"id": 5,
-    "title": "Playmo",
-    "image": "/assets/playmo-two.vercel.app_(Nest Hub).png",
-    "imageAlt": "K-edu website",
-    "description": "This happens to be my final group project in the Alx SE program. It functionalities includes: spotify integration, accessibity, and responsiveness",
-    "github": "https://github.com/MichaelOmoniyi/playmo",
-    "liveSite": "https://playmo-two.vercel.app/"
+    {
+        "id": 5,
+        "title": "Clarify",
+        "image": "/assets/clarify-app.pages.dev_(Nest Hub Max).png",
+        "imageAlt": "Clarify website",
+        "description": "A career guidance platform helping users navigate career paths through mentorship and personalized strength assessment.",
+        "github": "https://github.com/MichaelOmoniyi/social-proof-section-master",
+        "liveSite": "https://clarify-app.pages.dev/"
     },
-    {"id": 6,
-    "title": "Intro Section with dropdown navigation",
-    "image": "/assets/intro-section-with-dropdown-navigation-main-one-jet.vercel.app_(Nest Hub).png",
-    "imageAlt": "K-edu website",
-    "description": "This is a frontend mentor project, it is a landing page with functionalites such as: dropdown navigation, navbar, accessibility, and responsiveness",
-    "github": "https://github.com/MichaelOmoniyi/intro-section-with-dropdown-navigation-main",
-    "liveSite": "https://intro-section-with-dropdown-navigation-main-one-jet.vercel.app/"
+    {
+        "id": 6,
+        "title": "Playmo",
+        "image": "/assets/playmo-two.vercel.app_(Nest Hub).png",
+        "imageAlt": "Playmo website",
+        "description": "A music platform with Spotify integration, featuring accessibility features and responsive design.",
+        "github": "https://github.com/MichaelOmoniyi/playmo",
+        "liveSite": "https://playmo-two.vercel.app/"
     },
-    {"id": 7,
-    "title": "Social Proof Section",
-    "image": "/assets/social-proof-section-inky-two.vercel.app_(Nest Hub).png",
-    "imageAlt": "K-edu website",
-    "description": "This is also a frontend mentor project, it a landing page built to practice site resonsiveness and layout.",
-    "github": "https://github.com/MichaelOmoniyi/social-proof-section-master",
-    "liveSite": "https://social-proof-section-inky-two.vercel.app/"
+    {
+        "id": 7,
+        "title": "Udemy Clone",
+        "image": "/assets/udemy-landing-page-clone-six.vercel.app_(Nest Hub).png",
+        "imageAlt": "Udemy Clone website",
+        "description": "A faithful recreation of Udemy's landing page, demonstrating attention to detail and responsive design principles.",
+        "github": "https://github.com/MichaelOmoniyi/Udemy-Landing-Page-Clone",
+        "liveSite": "https://udemy-landing-page-clone-six.vercel.app/"
     }
 ]
  

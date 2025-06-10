@@ -2,28 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Brand Colors */
   --blue-grad: #0652c5;
   --purple-grad: #d4418e;
   --header: rgb(97, 35, 158);
   --border-color: rgb(97, 35, 158);
-  --text: rgb(70, 70, 70);
   --nav-shadow: rgba(97, 35, 158, 0.2);
   --bg-img: linear-gradient(315deg, #d4418e 0%, #0652c5 74%);
   --montserrat: "Montserrat", sans-serif;
+
+  /* Light Theme */
+  --background: rgb(226, 226, 226);
+  --card-background: rgb(255, 255, 255);
+  --text: rgb(33, 33, 33);
+  --text-light: rgb(90, 90, 90);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --blur-background: rgba(255, 255, 255, 0.9);
+  --section-bg: rgb(240, 240, 245);
+  --dropdown-bg: rgb(255, 255, 255);
+  --dropdown-text: rgb(33, 33, 33);
+  --dropdown-hover: rgb(245, 245, 247);
+  --hamburger-color: var(--header);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: rgb(17, 17, 17);
+    --card-background: rgb(30, 30, 30);
+    --text: rgb(240, 240, 240);
+    --text-light: rgb(200, 200, 200);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2),
+      0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+      0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    --blur-background: rgba(17, 17, 17, 0.9);
+    --section-bg: rgb(22, 22, 22);
+    --dropdown-bg: rgb(35, 35, 35);
+    --dropdown-text: rgb(240, 240, 240);
+    --dropdown-hover: rgb(45, 45, 45);
+    --hamburger-color: white;
   }
+}
+
+/* Animation Variables */
+:root {
+  --transition-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 0.3s;
 }
 
 body {
@@ -31,63 +61,108 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: rgb(0, 0, 0);
-  background-color: rgb(250, 250, 250);
+  color: var(--text);
+  background-color: var(--background);
+  font-family: var(--montserrat);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  display: inline-block;
+  position: relative;
+  color: var(--header);
+  font-family: var(--montserrat);
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--purple-grad), var(--blue-grad));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 3rem;
+  height: 0.25rem;
+  background-image: var(--bg-img);
+  border-radius: 0.125rem;
+  transition: width 0.3s var(--transition-bezier);
+}
+
+.header:hover::after {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 720px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 4rem 3rem;
+  }
+}
+
+/* Modern card styles */
+.card {
+  background: var(--card-background);
+  border-radius: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s var(--transition-bezier);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Modern button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  background-image: var(--bg-img);
+  color: white;
+  transition: all 0.3s var(--transition-bezier);
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Glass effect */
+.glass {
+  background: var(--blur-background);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-
-.header {
-    display: inline;
-    position: relative;
-    color: var(--header);
-    font-family: var(--montserrat);
-    font-size: 1.875rem /* 30px */;
-    line-height: 2.25rem /* 36px */;
-     font-weight: 700;
-}
-
-.header::before {
-    content: "";
-    width: 100%;
-    height: .2rem;
-    position: absolute;
-    bottom: 0rem;
-    background-image: linear-gradient(180deg, #d4418e 0%, #0652c5 74%);
-}
-
-.header::after {
-    content: "";
-    width: 100%;
-    height: .2rem;
-    position: absolute;
-    bottom: -.4rem;
-    left: 0;
-    background-image: linear-gradient(180deg, #d4418e 0%, #0652c5 74%);
-}
-
-.container {
-  width: 100%;
-  padding: 1rem;
-  margin-block: 1rem;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-@media (min-width: 720px) {
-  .container {
-    padding-inline: 4vw;
-  }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        padding-inline: 3rem;
-        padding-block: 1.5rem;
-    }
 }

@@ -1,66 +1,119 @@
 .formContainer {
   width: 100%;
-  margin-top: 2rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
 }
 
 .formContent {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  border: 1px solid var(--header);
+  padding: 2rem;
+  gap: 1.5rem;
+  background: var(--card-background);
   border-radius: 1rem;
-  gap: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s var(--transition-bezier);
+  position: relative;
+  overflow: hidden;
 }
 
-.formContent div {
+.formContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  height: 100%;
+  background: linear-gradient(135deg,
+    rgba(212, 65, 142, 0.05) 0%,
+    rgba(6, 82, 197, 0.05) 100%
+  );
+  z-index: 0;
+}
+
+.formContent > * {
+  position: relative;
+  z-index: 1;
 }
 
 .formContent label {
-  font-size: 16px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--text);
+  margin-left: 0.5rem;
 }
 
 .formContent input,
 .formContent textarea {
   width: 100%;
-  border: 1px solid var(--header);
-  border-radius: 1rem;
   padding: 1rem;
-  transition: border 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid var(--section-bg);
+  border-radius: 0.75rem;
+  background: var(--section-bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: all 0.3s var(--transition-bezier);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.formContent textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
 .formContent input:focus,
 .formContent textarea:focus {
-  border: 2px solid var(--header);
   outline: none;
+  border-color: var(--header);
+  background: var(--card-background);
+  box-shadow: 0 0 0 4px rgba(97, 35, 158, 0.1);
+}
+
+.formContent input:hover,
+.formContent textarea:hover {
+  border-color: var(--header);
+  background: var(--section-bg);
 }
 
 .formContent button {
   width: 100%;
-  border: 1px solid var(--text);
-  border-radius: 1rem;
   padding: 1rem;
-  background-image: linear-gradient(315deg, var(--purple-grad) 0%, var(--blue-grad) 74%);
-  color: rgb(255, 255, 255);
-  font-size: 18px;
-  font-weight: 500;
-  box-shadow: none;
-  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  border-radius: 0.75rem;
+  background-image: var(--bg-img);
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--transition-bezier);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .formContent button:hover {
-  background-image: linear-gradient(315deg, var(--blue-grad) 0%, var(--purple-grad) 74%);
-  box-shadow: 2px 2px var(--header);
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+.formContent button:active {
+  transform: translateY(0);
 }
 
 @media (min-width: 720px) {
   .formContainer {
-    padding-inline: calc(5rem + 25vw);
+    padding-inline: 2rem;
+  }
+  
+  .formContent {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .formContainer {
+    padding-inline: 4rem;
   }
 }

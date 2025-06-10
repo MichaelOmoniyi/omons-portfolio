@@ -1,81 +1,181 @@
 .gallery {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
 }
 
 .group {
-  border: 1px solid var(--border-color);
-}
-
-.details {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.group:nth-child(odd) {
-  transform: translateX(-200px);
+  background: var(--card-background);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.5s var(--transition-bezier);
   opacity: 0;
-  transition: all 0.5s ease-out;
+  transform: translateY(20px);
+  position: relative;
+  isolation: isolate;
 }
 
-.group:nth-child(even) {
-  transform: translateX(200px);
+.group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right bottom,
+    var(--purple-grad),
+    var(--blue-grad)
+  );
   opacity: 0;
-  transition: all 0.5s ease-out;
+  z-index: -1;
+  transition: opacity 0.5s var(--transition-bezier);
 }
 
-.fadeIn:nth-child(odd),
-.fadeIn:nth-child(even) {
-  transform: translateX(0);
-  opacity: 1;
+.group:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--hover-shadow);
+}
+
+.group:hover::before {
+  opacity: 0.1;
 }
 
 .projectView {
   position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.projectView img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--transition-bezier);
+}
+
+.group:hover .projectView img {
+  transform: scale(1.1);
 }
 
 .projectLinksHover {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 65, 142, 0.9),
+    rgba(6, 82, 197, 0.9)
+  );
+  opacity: 0;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transform: translateY(100%);
+  transition: all 0.5s var(--transition-bezier);
+}
+
+.group:hover .projectLinksHover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.details {
+  padding: 2rem;
+  background: var(--card-background);
+  position: relative;
+}
+
+.details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--bg-img);
+  transition: width 0.5s var(--transition-bezier);
+}
+
+.group:hover .details::before {
+  width: 90%;
 }
 
 .projectDescription {
-  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.projectDescription h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--header);
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--purple-grad), var(--blue-grad));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projectDescription p {
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 1.125rem;
 }
 
 .projectLinks {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
+  gap: 1.5rem;
+  justify-content: flex-start;
 }
 
 .icons {
-  color: var(--border-color);
-  font-size: 30px;
+  font-size: 1.75rem;
+  color: white;
+  transition: all 0.3s var(--transition-bezier);
+}
+
+.projectLinks .icons {
+  color: var(--header);
+}
+
+.icons:hover {
+  transform: translateY(-4px) scale(1.1);
+  opacity: 0.8;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1024px) {
-  .projectLinksHover {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    position: absolute;
-    top: 0;
-    background-color: rgba(225, 225, 225, 0.7);
-    opacity: 0;
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  .group:hover .projectLinksHover {
-    opacity: 1;
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
   }
 
   .projectLinks {
     display: none;
+  }
+
+  .projectDescription h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

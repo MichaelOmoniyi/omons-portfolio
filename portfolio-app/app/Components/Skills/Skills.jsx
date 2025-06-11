@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./Skills.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,132 +14,175 @@ import {
   faNode,
   faNpm,
   faBootstrap,
+  faAws,
+  faDocker,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCaretDown,
+  faDatabase,
+  faServer,
+  faCog,
+  faUsers,
+  faBrain,
+} from "@fortawesome/free-solid-svg-icons";
+import TailwindIcon from "./TailwindIcon";
+
+const skillCategories = {
+  frontend: {
+    title: "Frontend Development",
+    icon: faReact,
+    skills: [
+      { name: "React.js", icon: faReact, experience: "Primary Framework" },
+      { name: "Next.js", experience: "Production Experience" },
+      { name: "Vue.js", icon: faVuejs, experience: "Project Experience" },
+      { name: "JavaScript", icon: faJs, experience: "Core Technology" },
+      { name: "TypeScript", experience: "Daily Use" },
+      { name: "HTML5", icon: faHtml5, experience: "Core Technology" },
+      { name: "CSS3", icon: faCss3, experience: "Core Technology" },
+      {
+        name: "Tailwind CSS",
+        customIcon: TailwindIcon,
+        experience: "Primary Styling",
+      },
+      {
+        name: "Bootstrap",
+        icon: faBootstrap,
+        experience: "Project Experience",
+      },
+      { name: "Github", icon: faGithub, experience: "Version Control" },
+      { name: "Npm", icon: faNpm, experience: "Package Management" },
+    ],
+  },
+  backend: {
+    title: "Backend Development",
+    icon: faServer,
+    skills: [
+      { name: "Node.js", icon: faNode, experience: "Primary Runtime" },
+      { name: "Express.js", experience: "API Development" },
+      { name: "Python", icon: faPython, experience: "Server-side Development" },
+      { name: "Flask", experience: "API Development" },
+      { name: "SQL", icon: faDatabase, experience: "Data Management" },
+      { name: "MongoDB", experience: "NoSQL Database" },
+      { name: "Github", icon: faGithub, experience: "Version Control" },
+      { name: "Npm", icon: faNpm, experience: "Package Management" },
+    ],
+  },
+  devops: {
+    title: "DevOps & Tools",
+    icon: faCog,
+    skills: [
+      { name: "Git", icon: faGit, experience: "Version Control" },
+      { name: "Docker", icon: faDocker, experience: "Containerization" },
+      { name: "AWS", icon: faAws, experience: "Cloud Services" },
+      { name: "CI/CD", experience: "Automation" },
+      { name: "Linux", experience: "System Administration" },
+      { name: "Github", icon: faGithub, experience: "Version Control" },
+      { name: "Npm", icon: faNpm, experience: "Package Management" },
+    ],
+  },
+  tools: {
+    title: "Development Tools",
+    icon: faCog,
+    skills: [
+      { name: "Git", icon: faGit, experience: "Version Control" },
+      { name: "GitHub", icon: faGithub, experience: "Collaboration" },
+      { name: "VS Code", experience: "Primary IDE" },
+      { name: "PyCharm", experience: "Python Development" },
+      { name: "Linux", experience: "System Administration" },
+      { name: "Vim", experience: "Text Editing" },
+      { name: "Figma", experience: "UI Design" },
+      { name: "Docker", icon: faDocker, experience: "Containerization" },
+      { name: "CI/CD", experience: "Automation" },
+    ],
+  },
+  soft: {
+    title: "Professional Skills",
+    icon: faUsers,
+    skills: [
+      { name: "Communication", experience: "Cross-functional Teams" },
+      { name: "Team Work", experience: "Collaborative Development" },
+      { name: "Problem Solving", experience: "Technical Solutions" },
+      { name: "Project Management", experience: "Agile/Scrum" },
+      { name: "Leadership", experience: "Team Lead Experience" },
+      { name: "Versatility", experience: "Adaptable Learning" },
+      { name: "Creativity", experience: "Innovative Solutions" },
+    ],
+  },
+};
 
 const Skills = () => {
+  const [activeCategory, setActiveCategory] = useState("frontend");
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
   return (
-    <div className="container" id="skills">
-      <h2 className="header">Skills</h2>
-      <div className={styles.skillsIcons}>
-        <FontAwesomeIcon
-          icon={faPython}
-          className={styles.icons}
-          title="Python"
-        />
-        <FontAwesomeIcon
-          icon={faJs}
-          className={styles.icons}
-          title="JavaScript"
-        />
-        <FontAwesomeIcon
-          icon={faHtml5}
-          className={styles.icons}
-          title="HTML5"
-        />
-        <FontAwesomeIcon icon={faCss3} className={styles.icons} title="CSS3" />
-        <FontAwesomeIcon
-          icon={faReact}
-          className={styles.icons}
-          title="React"
-        />
-        <FontAwesomeIcon
-          icon={faVuejs}
-          className={styles.icons}
-          title="Vue.js"
-        />
-        <FontAwesomeIcon
-          icon={faNode}
-          className={styles.icons}
-          title="Node.js"
-        />
-        <FontAwesomeIcon
-          icon={faBootstrap}
-          className={styles.icons}
-          title="Bootstrap"
-        />
-        <FontAwesomeIcon icon={faGit} className={styles.icons} title="Git" />
-        <FontAwesomeIcon
-          icon={faGithub}
-          className={styles.icons}
-          title="GitHub"
-        />
-        <FontAwesomeIcon icon={faNpm} className={styles.icons} title="NPM" />
+    <section className="container" id="skills">
+      <h2 className="header">Technical Expertise</h2>
+
+      <div className={styles.categoryTabs}>
+        {Object.entries(skillCategories).map(([key, category]) => (
+          <button
+            key={key}
+            className={`${styles.categoryTab} ${
+              activeCategory === key ? styles.active : ""
+            }`}
+            onClick={() => setActiveCategory(key)}
+          >
+            <FontAwesomeIcon icon={category.icon} />
+            <span>{category.title}</span>
+          </button>
+        ))}
       </div>
-      <div className={styles.skillsContainer}>
-        <div className={styles.skill}>
-          <span className={styles.skillHeader}>
-            <h3>Languages</h3>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </span>
-          <div className={styles.skillList}>
-            <ul>
-              <li>Python</li>
-              <li>C</li>
-              <li>SQL</li>
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-            </ul>
+
+      <div className={styles.skillsGrid}>
+        {skillCategories[activeCategory].skills.map((skill, index) => (
+          <div
+            key={index}
+            className={styles.skillCard}
+            onMouseEnter={() => setHoveredSkill(skill.name)}
+            onMouseLeave={() => setHoveredSkill(null)}
+          >
+            <div className={styles.skillInfo}>
+              <div className={styles.skillHeader}>
+                {skill.icon && (
+                  <FontAwesomeIcon
+                    icon={skill.icon}
+                    className={styles.skillIcon}
+                  />
+                )}
+                {skill.customIcon && (
+                  <skill.customIcon
+                    className={`${styles.skillIcon} !w-8 h-auto`}
+                  />
+                )}
+                <h3>{skill.name}</h3>
+              </div>
+              {/* <div className={styles.skillExperience}>
+                <span>{skill.experience}</span>
+              </div> */}
+            </div>
           </div>
-        </div>
-        <div className={styles.skill}>
-          <span className={styles.skillHeader}>
-            <h3>Frameworks</h3>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </span>
-          <div className={styles.skillList}>
-            <ul>
-              <li>React.js</li>
-              <li>Next.js</li>
-              <li>Vue.js</li>
-              <li>Nuxt.js</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>Flask</li>
-              <li>Bootstrap</li>
-              <li>Tailwind CSS</li>
-            </ul>
+        ))}
+      </div>
+
+      <div className={styles.certifications}>
+        <h3>Certifications & Achievements</h3>
+        <div className={styles.certList}>
+          {/* Add your certifications here */}
+          <div className={styles.certCard}>
+            <h4>ALX Certified Software Engineer</h4>
+            <p>ALX</p>
           </div>
-        </div>
-        <div className={styles.skill}>
-          <span className={styles.skillHeader}>
-            <h3>Tools</h3>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </span>
-          <div className={styles.skillList}>
-            <ul>
-              <li>Linux</li>
-              <li>Vim</li>
-              <li>Visual Studio Code</li>
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>NPM</li>
-              <li>PyCharm</li>
-              <li>Figma</li>
-            </ul>
+          <div className={styles.certCard}>
+            <h4>Try Kibo Web Foundation Program</h4>
+            <p>KIBO</p>
           </div>
-        </div>
-        <div className={styles.skill}>
-          <span className={styles.skillHeader}>
-            <h3>Soft Skills</h3>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </span>
-          <div className={styles.skillList}>
-            <ul>
-              <li>Communication</li>
-              <li>Team work</li>
-              <li>Problem Solving</li>
-              <li>Project Management</li>
-              <li>Versatility</li>
-              <li>Creativity</li>
-              <li>Leadership</li>
-            </ul>
+          <div className={styles.certCard}>
+            <h4>Matlab Onramp</h4>
+            <p>Mathworks</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -133,8 +133,8 @@ const NavBar = () => {
             </a>
             <a
               className={`${styles.navBtn} navBtn`}
-              href="https://drive.google.com/file/d/1fGVoHtV5OPfh0kZ17vINp_XDYuiEr1lO/view?usp=drive_link"
-              target="_blank"
+              href="/assets/resume/Omons_Resume.pdf"
+              download="Omons_Resume.pdf"
             >
               Download Resume
             </a>
@@ -169,9 +169,9 @@ const NavBar = () => {
             Say Hi
           </a>
           <a
-            href="https://drive.google.com/file/d/1fGVoHtV5OPfh0kZ17vINp_XDYuiEr1lO/view?usp=drive_link"
+            href="/assets/resume.pdf"
             className="navLink"
-            target="_blank"
+            download="Omons_Resume.pdf"
           >
             Download Resume
           </a>

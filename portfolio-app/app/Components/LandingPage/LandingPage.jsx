@@ -35,9 +35,9 @@ const LandingPage = () => {
   }, []);
 
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -55,10 +55,10 @@ const LandingPage = () => {
             Hi <span className={styles.wavingEmoji}>{"\u{1F44B}"}</span>
           </h1>
           <h2 className={styles.mainText}>
-            I'm <span className={styles.highlight}>Omons</span>
+            I&apos;m <span className={styles.highlight}>Omons</span>
           </h2>
           <p className={styles.subText}>
-            A Software Engineer crafting beautiful digital experiences
+            A Software Engineer crafting beautiful digital experiences.
           </p>
           <div className={styles.ctaContainer}>
             <a href="#projects" className="button">

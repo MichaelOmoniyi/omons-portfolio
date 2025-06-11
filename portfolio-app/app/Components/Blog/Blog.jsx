@@ -1,9 +1,10 @@
 "use client";
-import React, { useRef, useState, useEffect } from 'react';
-import styles from './Blog.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMedium, faHashtag } from '@fortawesome/free-brands-svg-icons';
-import { faBookOpen, faClock } from '@fortawesome/free-solid-svg-icons';
+import React, { useRef, useState, useEffect } from "react";
+import styles from "./Blog.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMedium } from "@fortawesome/free-brands-svg-icons";
+import { faHashtag } from "@fortawesome/free-solid-svg-icons";
+import { faBookOpen, faClock } from "@fortawesome/free-solid-svg-icons";
 
 const blogPosts = [
   {
@@ -32,8 +33,7 @@ const blogPosts = [
   },
   {
     id: 3,
-    title:
-      "Clarify ALX Research Project",
+    title: "Clarify ALX Research Project",
     excerpt:
       "This is a research project that I did for the ALX Software Engineering Program. It is a project that I did to learn more about the software engineering process and how to use the software engineering tools and techniques.",
     mediumUrl:
@@ -55,7 +55,7 @@ const Blog = () => {
           if (entry.isIntersecting) {
             setIsVisible((prev) => ({
               ...prev,
-              [entry.target.id]: true
+              [entry.target.id]: true,
             }));
             observer.unobserve(entry.target);
           }
@@ -83,9 +83,11 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <article
               key={post.id}
-              ref={el => refs.current[index] = el}
+              ref={(el) => (refs.current[index] = el)}
               id={`blog-${post.id}`}
-              className={`${styles.blogCard} ${isVisible[`blog-${post.id}`] ? styles.fadeIn : ''}`}
+              className={`${styles.blogCard} ${
+                isVisible[`blog-${post.id}`] ? styles.fadeIn : ""
+              }`}
             >
               <div className={styles.blogContent}>
                 <h3>{post.title}</h3>
@@ -93,7 +95,10 @@ const Blog = () => {
                 <div className={styles.tags}>
                   {post.tags.map((tag, i) => (
                     <span key={i} className={styles.tag}>
-                      <FontAwesomeIcon icon={faHashtag} className={styles.tagIcon} />
+                      <FontAwesomeIcon
+                        icon={faHashtag}
+                        className={styles.tagIcon}
+                      />
                       {tag}
                     </span>
                   ))}
@@ -105,10 +110,10 @@ const Blog = () => {
                   </span>
                   <span>
                     <FontAwesomeIcon icon={faBookOpen} />
-                    {new Date(post.publishDate).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric'
+                    {new Date(post.publishDate).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
                     })}
                   </span>
                 </div>
@@ -118,7 +123,10 @@ const Blog = () => {
                   rel="noopener noreferrer"
                   className={styles.readMore}
                 >
-                  <FontAwesomeIcon icon={faMedium} className={styles.mediumIcon} />
+                  <FontAwesomeIcon
+                    icon={faMedium}
+                    className={styles.mediumIcon}
+                  />
                   Read on Medium
                 </a>
               </div>
@@ -130,4 +138,4 @@ const Blog = () => {
   );
 };
 
-export default Blog; 
+export default Blog;

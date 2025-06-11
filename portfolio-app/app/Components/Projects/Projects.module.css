@@ -15,6 +15,7 @@
   transform: translateY(20px);
   position: relative;
   isolation: isolate;
+  transform-origin: center center;
 }
 
 .group::before {
@@ -64,9 +65,10 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   background: linear-gradient(
     135deg,
     rgba(212, 65, 142, 0.9),
@@ -77,6 +79,7 @@
   backdrop-filter: blur(4px);
   transform: translateY(100%);
   transition: all 0.5s var(--transition-bezier);
+  padding: 2rem;
 }
 
 .group:hover .projectLinksHover {
@@ -84,10 +87,116 @@
   transform: translateY(0);
 }
 
+.companyLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.companyLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  color: white;
+  transition: all 0.3s var(--transition-bezier);
+}
+
+.companyLink:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.multipleLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.multipleLinks h4 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.projectLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: white;
+  transition: all 0.3s var(--transition-bezier);
+}
+
+.projectLink:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.companyLinksBottom {
+  display: flex;
+  gap: 1rem;
+}
+
+.viewProjectsBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--purple-grad), var(--blue-grad));
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.875rem;
+  transition: all 0.3s var(--transition-bezier);
+}
+
+.viewProjectsBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.projectsDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--card-background);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 10;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  border-radius: 0.25rem;
+  transition: all 0.2s var(--transition-bezier);
+}
+
+.dropdownLink:hover {
+  background: var(--card-hover);
+  color: var(--header);
+}
+
 .details {
   padding: 2rem;
   background: var(--card-background);
   position: relative;
+  height: 100%;
 }
 
 .details::before {
@@ -110,21 +219,79 @@
   margin-bottom: 1.5rem;
 }
 
-.projectDescription h3 {
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.titleRow h3 {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--header);
-  margin-bottom: 1rem;
   background: linear-gradient(to right, var(--purple-grad), var(--blue-grad));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.role {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--purple-grad), var(--blue-grad));
+  color: white;
+  text-align: center;
+}
+
 .projectDescription p {
   color: var(--text);
   line-height: 1.8;
   font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.techBadge {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  background: var(--card-hover);
+  color: var(--text);
+  transition: all 0.3s var(--transition-bezier);
+}
+
+.techBadge:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--purple-grad), var(--blue-grad));
+  color: white;
+}
+
+.keyFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.featureIcon {
+  color: var(--purple-grad);
+  font-size: 0.75rem;
 }
 
 .projectLinks {
@@ -169,7 +336,7 @@
     display: none;
   }
 
-  .projectDescription h3 {
+  .titleRow h3 {
     font-size: 1.75rem;
   }
 }

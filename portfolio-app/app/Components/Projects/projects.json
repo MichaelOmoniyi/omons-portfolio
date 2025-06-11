@@ -1,12 +1,33 @@
 [   
     {
         "id": 1,
-        "title": "Balinga Photography",
-        "image": "/assets/balinga.png",
-        "imageAlt": "Balinga Photography website",
-        "description": "A modern photography portfolio showcasing stunning visuals with smooth transitions, gallery features, and contact integration. Built with React and modern design principles.",
-        "github": "https://github.com/MichaelOmoniyi/Balinga-Photography",
-        "liveSite": "https://balinga-photography.vercel.app/"
+        "title": "8wonder Internship",
+        "image": "/assets/8wonder.png",
+        "imageAlt": "8wonder projects",
+        "description": "Contributed to multiple live projects during my internship at 8wonder, focusing on frontend development and UI/UX implementation. Worked in an agile team environment using modern development practices.",
+        "github": "https://github.com/8wonder",
+        "liveSite": "https://the8wonder.com/",
+        "projects": [
+            {
+                "name": "Project 1",
+                "liveSite": "https://callis-edge-www.vercel.app/"
+            },
+            {
+                "name": "Project 2",
+                "liveSite": "https://rebirth-distribution-www.vercel.app/"
+            },
+            {
+                "name": "Project 3",
+                "liveSite": "https://tiqstar-www.vercel.app/"
+            },
+            {
+                "name": "Project 4",
+                "liveSite": "https://marilla-travels-www.vercel.app/"
+            }
+        ],
+        "techStack": ["React", "Next.js", "TailwindCSS", "TypeScript", "Git"],
+        "role": "Frontend Developer Intern",
+        "keyFeatures": ["Live Project Contributions", "Team Collaboration", "Modern UI Implementation"]
     },
     {
         "id": 2,
@@ -15,7 +36,10 @@
         "imageAlt": "Mountain Top Record Application",
         "description": "A church management system for Mountain Top Youth Church featuring attendance tracking, member management, and event organization capabilities.",
         "github": "https://github.com/MichaelOmoniyi/Mountain-Top-Youth-Church",
-        "liveSite": "https://mountain-top-youth-church.vercel.app/"
+        "liveSite": "https://mountain-top-youth-church.vercel.app/",
+        "techStack": ["React", "Next.js", "MongoDB", "Express", "Node.js", "TailwindCSS"],
+        "role": "Full Stack Developer",
+        "keyFeatures": ["User Authentication", "Member Management", "Event Planning"]
     },
     {
         "id": 3,
@@ -24,7 +48,10 @@
         "imageAlt": "K-edu website",
         "description": "An e-learning platform for the Klaytn blockchain ecosystem with wallet integration, course filtering, and comprehensive learning resources.",
         "github": "https://github.com/MichaelOmoniyi/klaytn-dapp-toolkit/tree/main/frontend/k-edu",
-        "liveSite": "https://k-edu.vercel.app/"
+        "liveSite": "https://k-edu.vercel.app/",
+        "techStack": ["React", "Next.js", "Web3.js", "Solidity", "TailwindCSS"],
+        "role": "Blockchain Developer",
+        "keyFeatures": ["Wallet Integration", "Smart Contracts", "Course Management"]
     },
     {
         "id": 4,
@@ -33,25 +60,34 @@
         "imageAlt": "Analytic Dashboard website",
         "description": "A responsive analytics dashboard with dark/light theme support and interactive data visualization features.",
         "github": "https://github.com/MichaelOmoniyi/Analytics-Dashboard",
-        "liveSite": "https://analytics-dashboard-liard.vercel.app/"
+        "liveSite": "https://analytics-dashboard-liard.vercel.app/",
+        "techStack": ["React", "Next.js", "Chart.js", "TailwindCSS", "TypeScript"],
+        "role": "Frontend Developer",
+        "keyFeatures": ["Data Visualization", "Theme Switching", "Real-time Updates"]
     },
     {
         "id": 5,
         "title": "Clarify",
         "image": "/assets/clarify-app.pages.dev_(Nest Hub Max).png",
         "imageAlt": "Clarify website",
-        "description": "A career guidance platform helping users navigate career paths through mentorship and personalized strength assessment.",
+        "description": "A collaborative career guidance platform developed as part of a cross-functional team. Led frontend development while working closely with UX designers and backend developers to create an intuitive user experience for career path navigation and mentorship.",
         "github": "https://github.com/MichaelOmoniyi/social-proof-section-master",
-        "liveSite": "https://clarify-app.pages.dev/"
+        "liveSite": "https://clarify-app.pages.dev/",
+        "techStack": ["React", "Firebase", "TailwindCSS", "Node.js"],
+        "role": "Full Stack Developer",
+        "keyFeatures": ["Team Leadership", "Cross-functional Collaboration", "User-Centered Design"]
     },
     {
         "id": 6,
         "title": "Playmo",
         "image": "/assets/playmo-two.vercel.app_(Nest Hub).png",
         "imageAlt": "Playmo website",
-        "description": "A music platform with Spotify integration, featuring accessibility features and responsive design.",
+        "description": "A collaborative music platform project developed with a team of developers. Implemented Spotify integration and accessibility features while coordinating with team members on architecture decisions and feature implementation.",
         "github": "https://github.com/MichaelOmoniyi/playmo",
-        "liveSite": "https://playmo-two.vercel.app/"
+        "liveSite": "https://playmo-two.vercel.app/",
+        "techStack": ["React", "Next.js", "Spotify API", "TailwindCSS", "Node.js"],
+        "role": "Frontend Developer",
+        "keyFeatures": ["Team Development", "API Integration", "Collaborative Architecture"]
     },
     {
         "id": 7,
@@ -60,7 +96,10 @@
         "imageAlt": "Udemy Clone website",
         "description": "A faithful recreation of Udemy's landing page, demonstrating attention to detail and responsive design principles.",
         "github": "https://github.com/MichaelOmoniyi/Udemy-Landing-Page-Clone",
-        "liveSite": "https://udemy-landing-page-clone-six.vercel.app/"
+        "liveSite": "https://udemy-landing-page-clone-six.vercel.app/",
+        "techStack": ["React", "Next.js", "TailwindCSS"],
+        "role": "Frontend Developer",
+        "keyFeatures": ["Responsive Design", "Component Reusability", "Performance Optimization"]
     }
 ]
  

@@ -61,7 +61,7 @@
         "description": "A responsive analytics dashboard with dark/light theme support and interactive data visualization features.",
         "github": "https://github.com/MichaelOmoniyi/Analytics-Dashboard",
         "liveSite": "https://analytics-dashboard-liard.vercel.app/",
-        "techStack": ["React", "Next.js", "Chart.js", "TailwindCSS", "TypeScript"],
+        "techStack": ["Vue", "Nuxt.js", "Chart.js", "TailwindCSS", "TypeScript"],
         "role": "Frontend Developer",
         "keyFeatures": ["Data Visualization", "Theme Switching", "Real-time Updates"]
     },
